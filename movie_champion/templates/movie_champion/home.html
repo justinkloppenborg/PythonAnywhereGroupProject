@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'movie_champion/base.html' %}
+{% load static %}
+{% block content %}
+   <body>
+   {% if user.is_authenticated %}
+       <div class="page-container">
+
+           <h2 class="top-menu">Hello {{ user.username }},</h2>
+           <p>Please choose from below options.</p>
+       </div>
+   {% endif %}
+   <div class="content container">
+       <div class="row">
+           <div class="col-md-12">
+               <div class="links">
+                   <!-- Example row of columns -->
+                   <div class="row">
+                       <div class="col-md-3">
+                           <div class="thumbnail">
+                               <img src="{% static "images/stick_figure.png" %}" alt="customer"/>
+                               <div class="caption">
+                                   <h2>Customer</h2>
+                                   <p>Check out yourself. </p>
+                                   <p><a class="btn btn-primary" href="{% url 'movie_champion:customer_list' %}"
+                                         role="button">View
+                                       details &raquo;</a></p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <div class="thumbnail">
+                               <img src="{% static "images/austin_powers.jpg" %}" alt="Movie"/>
+                               <div class="caption">
+                                   <h2>Movies</h2>
+                                   <p>Our entire movie collection. Here for you, and you only</p>
+                                   <p><a class="btn btn-primary" href="{% url 'movie_champion:customer_list' %}"
+                                         role="button">View
+                                       details &raquo;</a></p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <div class="thumbnail">
+                               <img src="{% static "images/cart.png" %}" alt="Cart"/>
+                               <div class="caption">
+                                   <h2>Cart</h2>
+                                   <p>Found the perfect movie(s)? Time to make the big purchase.</p>
+                                   <p><a class="btn btn-primary" href="{% url 'movie_champion:customer_list' %}"
+                                         role="button">View
+                                       details &raquo;</a></p>
+                               </div>
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   </body>
+
+{% endblock %}
+
+</html>
